@@ -146,3 +146,22 @@ function diagonalDifference(arr) {
 const diff = diagonalDifference([[11, 2, 4], [4, 5, 6], [10, 8, -12]]);
 
 console.log(diff);
+
+/*Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal. */
+
+function plusMinus(arr) {
+
+    const arrLength = arr.length;
+
+    const negEL = arr.filter(function (number) {
+        return number < 0
+    })
+
+    const negArrLength = negEL.length;
+
+    return negArrLength/arrLength
+}
+
+const arr1 = [4, 5, 6, -1, -2, 4]
+
+console.log(plusMinus(arr1));
