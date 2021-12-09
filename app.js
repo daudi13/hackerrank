@@ -166,11 +166,41 @@ function plusMinus(arr) {
     }).length;
 
 
-    console.log((posEl/arrLength).toFixed(6))
-    console.log((negEl/arrLength).toFixed(6))
-    console.log((zeroEl/arrLength).toFixed(6))
+    console.log((posEl / arrLength).toFixed(6));
+    console.log((negEl / arrLength).toFixed(6));
+    console.log((zeroEl / arrLength).toFixed(6));
 }
 
 const arr1 = [-4,3,-9,0,4,1]
 
-plusMinus(arr1)
+plusMinus(arr1);
+
+
+/* staircase function*/
+
+function staircase(n) {
+
+    //to srat we will for loop through rows from 0 to n
+
+    for (let i = 0; i < n; i++) {
+        //for each row, we are considereing we will create an empty string step
+
+        let step = "";
+
+        //then we will iterate from 0 to n, through columns withfor loop
+
+        for (let k = 0; k < n; k++) {
+            //if the current column that we are looking at is equal to or less than the current row we want to add a pound(#) to step, else we will add space('')
+
+            if (k <= i) {
+                step += "#";
+            } else {
+                step += ""
+            }
+        }
+
+        console.log(step)
+    }
+}
+
+staircase(6)
