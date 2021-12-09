@@ -123,23 +123,19 @@ Given a square matrix, calculate the absolute difference between the sums of its
 
 function diagonalDifference(arr) {
 
-    const mtrxLength = arr.length;
+    const x = arr.length;
     let diag1 = 0;
-    let diag2 =0
+    let diag2 = 0;
 
-
-    for (let i = 0; i < mtrxLength; i++) {
-
-        for (let j = 0; j < mtrxLength; j++) {
-
+    for (let i = 0; i < x; i++) {
+        for (let j = 0; j < x; j++) {
             if (i === j) {
-                diag1+=arr[i][j]
+                diag1 += arr[i][j];
             }
 
-            if (i + j === mtrxLength - 1) {
+            if (i + j === x - 1) {
                 diag2+=arr[i][j]
             }
-
         }
     }
 
