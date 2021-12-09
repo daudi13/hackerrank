@@ -153,15 +153,24 @@ function plusMinus(arr) {
 
     const arrLength = arr.length;
 
-    const negEL = arr.filter(function (number) {
-        return number < 0
-    })
+    const negEl = arr.filter(function (number) {
+        return number < 0;
+    }).length;
 
-    const negArrLength = negEL.length;
+    const posEl = arr.filter(function (number) {
+        return number > 0;
+    }).length;
 
-    return negArrLength/arrLength
+    const zeroEl = arr.filter(function (number) {
+        return number === 0
+    }).length;
+
+
+    console.log((posEl/arrLength).toFixed(6))
+    console.log((negEl/arrLength).toFixed(6))
+    console.log((zeroEl/arrLength).toFixed(6))
 }
 
-const arr1 = [4, 5, 6, -1, -2, 4]
+const arr1 = [-4,3,-9,0,4,1]
 
-console.log(plusMinus(arr1));
+plusMinus(arr1)
