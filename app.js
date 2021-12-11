@@ -249,4 +249,4 @@ function birthdayCakeCandles(arr) {
 
 }
 
-birthdayCakeCandles([4,4,3,2,1])
+birthdayCakeCandles([4, 4, 3, 2, 1]);
