@@ -228,3 +228,25 @@ function miniMaxSum(arr) {
 }
 
 miniMaxSum([1, 3, 5, 7, 9]);
+
+/*You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest. */
+
+
+function birthdayCakeCandles(arr) {
+
+    const maxValue = Math.max(...arr);
+    let sum  = 0
+
+    for (let i = 0; i < arr.length; i++) {
+        if (maxValue === arr[i]) {
+            sum+=arr[i]
+        }
+    }
+
+    const candleNum = sum / maxValue
+    
+    console.log(candleNum)
+
+}
+
+birthdayCakeCandles([4,4,3,2,1])
