@@ -250,3 +250,39 @@ function birthdayCakeCandles(arr) {
 }
 
 birthdayCakeCandles([4, 4, 3, 2, 1]);
+
+/*iven a time in -hour AM/PM format, convert it to military (24-hour) time.
+
+Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock. */
+
+const timeConversion = function (s) {
+
+    if (s.slice(-2) === 'PM') {
+        const timeString = Number(s.slice(0, 2));
+
+        let timePiece = timeString + 12;
+
+        
+            console.log(timePiece + s.slice(2, -2));
+
+
+    } else if (s.slice(-2) === 'AM') {
+        const newTime = Number(s.slice(0, 2))
+
+        if (newTime < 10) {
+            console.log('0'+ newTime+s.slice(2, -2))
+        }
+        else if (newTime === 12) {
+            
+            console.log('0' + 0 + s.slice(2, -2))
+        } else {
+
+            console.log(newTime+s.slice(2, -2))
+        }
+
+    }
+}
+
+
+timeConversion('12:00:40AM')
