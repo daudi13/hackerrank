@@ -292,4 +292,4 @@ const timeConversion = function (s) {
 }
 
 
-timeConversion('10:00:40PM')
+timeConversion('07:05:45PM')
