@@ -263,8 +263,15 @@ const timeConversion = function (s) {
 
         let timePiece = timeString + 12;
 
-        
+        if (timePiece === 24) {
+
+            console.log(12 + s.slice(2, -2));
+        } else {
+            
             console.log(timePiece + s.slice(2, -2));
+        }
+
+        
 
 
     } else if (s.slice(-2) === 'AM') {
@@ -285,4 +292,4 @@ const timeConversion = function (s) {
 }
 
 
-timeConversion('12:00:40AM')
+timeConversion('10:00:40PM')
