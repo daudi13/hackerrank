@@ -303,3 +303,35 @@ Sam is a professor at the university and likes to round each student's grade acc
 if the difference between the grade and the next multiple of 5 is less than 3, round grade up to the next multiple of 5
 
 if the value of grade is less than 38, no rounding occurs as the result will be a failing grade*/
+
+
+const gradingStudents = function (grades) {
+
+    let output = [];
+
+    //iterate through the array 
+
+    for (let i = 0; i < grades.length; i++) {
+
+        if (grades[i] >= 38) {
+
+            let remainder = grades[i] % 5;
+
+            if (remainder === 3) {
+                output.push(grades[i] + (5-3))
+            } else if (remainder === 4) {
+                output.push(grades[i] + (5-4))
+            } else {
+                output.push(grades[i])
+            }
+        } else {
+            output.push(grades[i])
+        }
+    }
+
+    return output;
+}
+
+
+console.log(gradingStudents([44, 55, 64]));
+
