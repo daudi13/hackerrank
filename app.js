@@ -337,31 +337,34 @@ console.log(gradingStudents([44, 55, 64]));
 
 
 
-const gradingStudents = function(grades){
-  
-  //create an empty array 
-  
-  let gradeOutput = []
-  
-  //iterate through the grades array to find the individual grades
-  
-  for (const n of grades) {
+/*Sam's house has an apple tree and an orange tree that yield an abundance of fruit. Using the information given below, determine the number of apples and oranges that land on Sam's house.*/
+
+const countApplesAndOranges = function (s, t, a, b, apples, oranges) {
     
-    if (n >= 38) {
-      let rem = n % 5;
-      
-      if (rem === 3) {
-        
-        gradeOutput.push(n + (5 - 3))
-      } else if (rem === 4) {
-        gradeOutput.push(n + (5 - 4))
-      } else {
-        gradeOutput.push(n)
-      }
-    } else {
-      gradeOutput.push(n)
+    let newApplearr = [];
+    let newOrangeArr = [];
+
+    //iterate through the apples arrays and add each individual element to the distance of the apple tree to find out if it lands between the distance of s and t (sam's house)
+
+    for (const apple of apples) {
+
+        if (a + apple >= s && a + apple <= t) {
+            newApplearr.push(apple)
+        }
     }
-  }
-  
-  return gradeOutput;
+
+    //iterate through the oranges arrays and add each individual element to the distance of the orange tree to find out if it lands between the distance of s and t (sam's house)
+
+    for (const orange of oranges) {
+
+        if (b + orange <= t && b + orange >= s) {
+            newOrangeArr.push(orange)
+        }
+    }
+
+    console.log(newApplearr.length);
+    console.log(newOrangeArr.length);
 }
+
+
+countApplesAndOranges(7, 10, 4, 12, [2, 3, -4], [3, -2, -4]);
