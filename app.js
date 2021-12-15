@@ -335,3 +335,33 @@ const gradingStudents = function (grades) {
 
 console.log(gradingStudents([44, 55, 64]));
 
+
+
+const gradingStudents = function(grades){
+  
+  //create an empty array 
+  
+  let gradeOutput = []
+  
+  //iterate through the grades array to find the individual grades
+  
+  for (const n of grades) {
+    
+    if (n >= 38) {
+      let rem = n % 5;
+      
+      if (rem === 3) {
+        
+        gradeOutput.push(n + (5 - 3))
+      } else if (rem === 4) {
+        gradeOutput.push(n + (5 - 4))
+      } else {
+        gradeOutput.push(n)
+      }
+    } else {
+      gradeOutput.push(n)
+    }
+  }
+  
+  return gradeOutput;
+}
