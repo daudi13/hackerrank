@@ -368,3 +368,18 @@ const countApplesAndOranges = function (s, t, a, b, apples, oranges) {
 
 
 countApplesAndOranges(7, 10, 4, 12, [2, 3, -4], [3, -2, -4]);
+
+/*You are choreographng a circus show with various animals a=for one act, you are given two kangaroos on a number line ready to jump in the positive direction---the first kangaroo starts at locatio x1 and moves at a rate of v1 meters per jump---the second kangaroo starts at location x2 and moves at a rate of v2 meters per jump--you have to figure out a way to get both kangaroos at the same location at the same time as part of the show. If it is possible, return YES, otherwise retun NO*/
+
+
+
+const stairCase = function (n) {
+    for (let i = 0; i < n; i++) {
+
+        let space = '#'.repeat(i+1)
+        console.log(space.padStart(n, " "))
+    }
+}
+
+
+stairCase(6)
