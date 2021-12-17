@@ -359,5 +359,42 @@ countApplesAndOranges(7, 10, 4, 12, [2, 3, -4], [3, -2, -4]);
 
 
 function kangaroo(x1, v1, x2, v2) {
-    
+
 }
+
+/*Maria plays college basketball and wants to go pro. Each saeson she maintains a record of her play. she tabulates the number of times she breaks her season for points ans least points in a game. Points scored in the first game establish her record for the season, and she begins counting from there
+
+given the scores for a season, determine the number of times Maria breaks her records for most and least points scored during the season*/
+
+
+function breakingRecords(scores) {
+
+    const scoreSet = new Set(scores);
+
+    const newScoreArr = [];
+    const minMaxArr = []
+
+    let maxValue = 0;
+    let minValue = 0;
+
+    for (const [i, score] of scoreSet.entries()) {
+        newScoreArr.push(score);
+    }
+
+    for (let i = 0; i < newScoreArr.length; i++) {
+
+            if (newScoreArr[0] > newScoreArr[i-1]) {
+                maxValue++
+            }
+            else if (newScoreArr[0] < newScoreArr[i]) {
+                minValue++
+            }
+    }
+    
+    minMaxArr.push(minValue);
+    minMaxArr.push(maxValue);
+
+    console.log(minMaxArr)
+}
+
+breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42])
