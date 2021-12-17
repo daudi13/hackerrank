@@ -180,26 +180,11 @@ plusMinus(arr1);
 
 function staircase(n) {
 
-    //to srat we will for loop through rows from 0 to n
+    for (let i = 0; i < n; i++){
 
-    for (let i = 0; i < n; i++) {
-        //for each row, we are considereing we will create an empty string step
+        const space = '#'.repeat(i + 1);
 
-        let step = "";
-
-        //then we will iterate from 0 to n, through columns withfor loop
-
-        for (let k = 0; k < n; k++) {
-            //if the current column that we are looking at is equal to or less than the current row we want to add a pound(#) to step, else we will add space('')
-
-            if (k <= i) {
-                step += "#";
-            } else {
-                step += ""
-            }
-        }
-
-        console.log(step)
+        console.log(space.padStart(n, ' '));
     }
 }
 
@@ -373,13 +358,6 @@ countApplesAndOranges(7, 10, 4, 12, [2, 3, -4], [3, -2, -4]);
 
 
 
-const stairCase = function (n) {
-    for (let i = 0; i < n; i++) {
-
-        let space = '#'.repeat(i+1)
-        console.log(space.padStart(n, " "))
-    }
+function kangaroo(x1, v1, x2, v2) {
+    
 }
-
-
-stairCase(6)
