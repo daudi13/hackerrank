@@ -366,7 +366,8 @@ function kangaroo(x1, v1, x2, v2) {
 }
 
 
-console.log(kangaroo(0, , 4, 2))
+console.log(kangaroo(0, 3, 4, 2))
+
 /*Maria plays college basketball and wants to go pro. Each saeson she maintains a record of her play. she tabulates the number of times she breaks her season for points ans least points in a game. Points scored in the first game establish her record for the season, and she begins counting from there
 
 given the scores for a season, determine the number of times Maria breaks her records for most and least points scored during the season*/
