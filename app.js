@@ -403,4 +403,27 @@ function breakingRecords(scores) {
     console.log(minMaxArr)
 }
 
-breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42])
+breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42]);
+
+
+/*Given an array of integers and a positve integer k, determine the number of (i, j) pairs where i < j and ar[i] +ar[j] is divisible by k  */
+
+
+const divisibleSumPairs = (n, k, ar) => {
+
+    let length = 0
+
+    for (let i = 0; i < n; i++) {
+
+        for (let j = i + 1; j < n; j++) {
+            
+            if ( (ar[i] + ar[j]) % k === 0 && 2 <= n <= 100 && 1 <= k <= 100 && 1 <= ar[i] <=100) {
+                length++
+            }
+        }
+    }
+
+    console.log(length)
+}
+
+divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]);
