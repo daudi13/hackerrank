@@ -427,3 +427,6 @@ const divisibleSumPairs = (n, k, ar) => {
 }
 
 divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]);
+
+
+/*Given an array of birds sightings where every element represents a bird tyoe id, determin the id of the most frequent;u sighted type. if more than 1 type has been spotted that maximum amount, return the smallest of their ids*/
