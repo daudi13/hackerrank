@@ -429,4 +429,38 @@ const divisibleSumPairs = (n, k, ar) => {
 divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]);
 
 
-/*Given an array of birds sightings where every element represents a bird tyoe id, determin the id of the most frequent;u sighted type. if more than 1 type has been spotted that maximum amount, return the smallest of their ids*/
+/*Given an array of birds sightings where every element represents a bird type id, determin the id of the most frequent;u sighted type. if more than 1 type has been spotted that maximum amount, return the smallest of their ids*/
+
+
+function migratoryBirds(arr) {
+
+    const n = arr.length;
+
+    let mf = 1;
+    let m = 0
+    let item;
+
+    for (let i = 0; i < n; i++) {
+
+
+        for (let j = i; j < n; j++) {
+            
+            if (arr[i] == arr[j]) {
+                m++
+
+                if (mf < m) {
+                    mf = m
+                    item = arr[i]
+                }
+            }
+        }
+
+        m = 0
+    }
+
+    console.log(item)
+
+}
+
+
+migratoryBirds([1,2,3,4,4,4,5,5,5,1])
