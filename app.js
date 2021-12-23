@@ -375,35 +375,29 @@ given the scores for a season, determine the number of times Maria breaks her re
 
 function breakingRecords(scores) {
 
-    const scoreSet = new Set(scores);
+    const [h1, ...others] = scores; 
+    let highs = h1;
+    let lows = h1
+    let maxs = 0;
+    let mins = 0;
 
-    const newScoreArr = [];
-    const minMaxArr = []
 
-    let maxValue = 0;
-    let minValue = 0;
+    others.forEach(other => {
 
-    for (const [i, score] of scoreSet.entries()) {
-        newScoreArr.push(score);
-    }
+        if (other > highs) {
+            highs = other;
+            maxs++
+        } else if (other < lows) {
+            lows = other;
+            mins++;
+        }
+    })
 
-    for (let i = 0; i < newScoreArr.length; i++) {
 
-            if (newScoreArr[0] > newScoreArr[i-1]) {
-                maxValue++
-            }
-            else if (newScoreArr[0] < newScoreArr[i]) {
-                minValue++
-            }
-    }
-    
-    minMaxArr.push(minValue);
-    minMaxArr.push(maxValue);
-
-    console.log(minMaxArr)
+    console.log([mins, maxs])
 }
 
-breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42]);
+breakingRecords([3, 4, 21, 36, 1, 28, 35, 2, 24, 42]);
 
 
 /*Given an array of integers and a positve integer k, determine the number of (i, j) pairs where i < j and ar[i] +ar[j] is divisible by k  */
@@ -432,35 +426,4 @@ divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]);
 /*Given an array of birds sightings where every element represents a bird type id, determin the id of the most frequent;u sighted type. if more than 1 type has been spotted that maximum amount, return the smallest of their ids*/
 
 
-function migratoryBirds(arr) {
 
-    const n = arr.length;
-
-    let mf = 1;
-    let m = 0
-    let item;
-
-    for (let i = 0; i < n; i++) {
-
-
-        for (let j = i; j < n; j++) {
-            
-            if (arr[i] == arr[j]) {
-                m++
-
-                if (mf < m) {
-                    mf = m
-                    item = arr[i]
-                }
-            }
-        }
-
-        m = 0
-    }
-
-    console.log(item)
-
-}
-
-
-migratoryBirds([1,2,3,4,4,4,5,5,5,1])
