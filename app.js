@@ -104,18 +104,18 @@ console.log(trial2)
 
 
 
-function aVeryBigSum(arr) {
-    let sum = 0;
+// function aVeryBigSum(arr) {
+//     let sum = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
 
-    console.log(sum);
-}
+//     console.log(sum);
+// }
 
 
-aVeryBigSum([5, 8, 9, 10000, 7, 10000000,]);
+// aVeryBigSum([5, 8, 9, 10000, 7, 10000000,]);
 
 
 /*	Submissions	Leaderboard	Discussions	Editorial
@@ -176,7 +176,7 @@ const arr1 = [-4,3,-9,0,4,1]
 plusMinus(arr1);
 
 
-/* staircase function*/
+/* zcase function*/
 
 function staircase(n) {
 
@@ -446,3 +446,24 @@ const jumpHurdles = function (k, height) {
 }
 
 console.log(jumpHurdles(7, [2, 5, 4, 5, 2]));
+
+/*you are requied to calculate and print the sum if the elements in an array, keeping in mind that some of those integers may be quite large
+
+complete the aVeryBigSum function in the editpr below. it must return the sum of all array elements. aVeryBigSum has the following parameters 
+
+
+
+*/
+
+const aVeryBigSum = function (arr) {
+
+    let sum = 0
+
+    arr.forEach(function (value) {
+        sum +=value
+    }) 
+
+    return sum
+}
+
+console.log(aVeryBigSum([1000000, 50000000, 6000000000]))
