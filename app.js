@@ -467,3 +467,21 @@ const aVeryBigSum = function (arr) {
 }
 
 console.log(aVeryBigSum([1000000, 50000000, 6000000000]))
+
+
+/*Two cats and a mouse are at various positions on a line. you will be given their starting positions. Your task is to determine which cat will reach the mouse first, assuming the mouse does not move and the cats travel at equal speed. if the cats arrive at the same time the mouse will be allowed to move and it will escape while they fight. You are given q queries in the form of x,y and z representing the respective positions for the cats A and B, and for mouse C. complete the function catAndMouse to return the appropriate answers to each queery, which will be printed on a new line*/
+
+
+
+const catAndMouse = function (x, y, z) {
+
+    if (Math.abs(z - x) < Math.abs(z - y)) {
+        console.log(`Cat A`)
+    } else if (Math.abs(z - y) < Math.abs(x - z)) {
+        console.log(`Cat B`)
+    } else if (Math.abs(z - x) === Math.abs(z - y)) {
+        console.log(`Mouse C`)
+    }
+}
+
+catAndMouse(1, 2, 3);
