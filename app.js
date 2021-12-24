@@ -427,3 +427,22 @@ divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]);
 
 
 
+/* A video player plays a game in which the character competes ina hurdle race. hurdles are of varying heighs, and the characters have a maximum height they can jump. There is a magic potion they can take that wil increase their maximu jumo height by 1 unit for each dose. how many doses of the potion must the character take to be able to jump all the hurdles. if the character clear all of the hurdles, return 0*/
+
+
+
+const jumpHurdles = function (k, height) {
+
+    const maxValue = Math.max(...height);
+    
+    const NoPortions = maxValue - k;
+
+    if (NoPortions < 0) {
+
+        return 0
+    } else {
+        return NoPortions;
+    }
+}
+
+console.log(jumpHurdles(7, [2, 5, 4, 5, 2]));
