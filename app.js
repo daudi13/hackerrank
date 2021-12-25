@@ -495,7 +495,7 @@ console.log(h.length)
 
 const designerPdfViewer = function (h, word) {
 
-    //from stackoverflow 
+    //from stackoverflow :: https://stackoverflow.com/questions/41427029/replace-a-letter-with-its-alphabet-position
     const textPosition = [...word].map(a => parseInt(a, 36) -  10).filter(a => a >= 0);
     
     const newTextPosition = [];
