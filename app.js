@@ -485,3 +485,36 @@ const catAndMouse = function (x, y, z) {
 }
 
 catAndMouse(1, 2, 3);
+
+/*when a contagious block of text is selected in a PDF viewer, the selection if highlighted with a blue recctangle. in this pdf viewer, each word is highlighted independently. there is a list of 26 charaters aligned by index to their letters. for example 'a' is at index 0 and z is at index 25. theres will also be a string. using the letter height given, determine the area of the rectangle highlight in mm assuming all lettes are 1mm wide*/
+
+
+const h = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 2, 5, 5, 5, 5, 5, 7];
+
+console.log(h.length)
+
+const designerPdfViewer = function (h, word) {
+
+    //from stackoverflow 
+    const textPosition = [...word].map(a => parseInt(a, 36) -  10).filter(a => a >= 0);
+    
+    const newTextPosition = [];
+    const letterHeight = [];
+    
+    for(let i = 0; i < textPosition.length; i++) {
+        newTextPosition.push(textPosition[i] + 1)
+    }
+    
+    for (let j = 0; j < newTextPosition.length; j++) {
+        letterHeight.push(h[newTextPosition[j] - 1])
+    }
+    
+    const maxHeight = Math.max(...letterHeight);
+    const wordLength = maxHeight * letterHeight.length;
+    
+    console.log(wordLength);
+}
+
+
+designerPdfViewer(h, 'zaba')
+
