@@ -518,3 +518,5 @@ const designerPdfViewer = function (h, word) {
 
 designerPdfViewer(h, 'zaba')
 
+/*given an array of integers, find the longest subarray where the absolute difference between any two elements is less than or equal to 1*/
+
