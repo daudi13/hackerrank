@@ -563,3 +563,22 @@ For example, the given year = 1984. 1984 is divisible by 4, so it is a leap year
 
 
 */
+
+
+const dayOfTheProgrammer = function (year) {
+
+    let leapYear = [31, 29, 31, 30, 31, 30, 31, 30, 31];
+    const notLeapYear = [31, 28, 31, 30, 31, 30, 31, 30, 31];
+
+    // if (year % 400 === 0 || year % 4 === 0) {
+    //     console.log('leap year')
+    // } else {
+    //     console.log(`not a leap yeap`)
+    // }
+
+    leapYear.reduce((acc, curVal) => {
+        return acc + curVal
+    })
+}
+
+dayOfTheProgrammer(2016)
