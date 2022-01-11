@@ -567,18 +567,20 @@ For example, the given year = 1984. 1984 is divisible by 4, so it is a leap year
 
 const dayOfTheProgrammer = function (year) {
 
-    let leapYear = [31, 29, 31, 30, 31, 30, 31, 30, 31];
-    const notLeapYear = [31, 28, 31, 30, 31, 30, 31, 30, 31];
+	//the 256th day fall in september [9]
 
-    // if (year % 400 === 0 || year % 4 === 0) {
-    //     console.log('leap year')
-    // } else {
-    //     console.log(`not a leap yeap`)
-    // }
+    let leapYear = [31, 29, 31, 30, 31, 30, 31, 31];
+	const notLeapYear = [31, 28, 31, 30, 31, 30, 31, 31];
 
-    leapYear.reduce((acc, curVal) => {
-        return acc + curVal
-    })
+	
+	if (year < 1918 && year % 4 === 0) {
+		console.log(`${256 - leapYear.reduce((acc, val) => acc + val, 0)}.09.${year}`)
+	} else if (year > 1918 && year % 400 === 0 || year % 4 === 0) {
+		console.log(`${256 - leapYear.reduce((acc, val) => acc + val, 0)}.09.${year}`)
+	} else {
+		console.log(`${256 - notLeapYear.reduce((acc, val) => acc + val, 0)}.09.${year}`)
+	}
+
 }
 
-dayOfTheProgrammer(2016)
+dayOfTheProgrammer(1900)
