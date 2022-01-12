@@ -583,4 +583,24 @@ const dayOfTheProgrammer = function (year) {
 
 }
 
-dayOfTheProgrammer(1900)
+dayOfTheProgrammer(1900);
+
+
+/*a descrete Mathematics professor has a class of studnets. Frustrated with their lack of disciplinre, the professor decides to cancel class if fewer than some number of students are present when thr class starts. Arrival times go from (arrivalTime <= 0)to arrived late (arrialTime > 0)
+Given the arrival time of each student and a threshold number of attendees, determune if the class is cancelled
+*/
+
+// k is the number of students who came on time
+// a is an arrray of the arrival time of each student
+
+
+const angryProfessor = function (k, a) {
+	const n = a.length;
+	const l = a.filter(late => late > 0).length
+
+	return k/n >= l/n ? 'YES' : 'NO'
+}
+
+console.log(angryProfessor(3, [-6, -5, -2, -1, 0, 1, 2]));
+
+//UNSOLVED*
