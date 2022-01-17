@@ -120,31 +120,31 @@ console.log(trial2)
 /*	Submissions	Leaderboard	Discussions	Editorial
 Given a square matrix, calculate the absolute difference between the sums of its diagonals.*/
 
-// function diagonalDifference(arr) {
+function diagonalDifference(arr) {
 
-//     const x = arr.length;
-//     let diag1 = 0;
-//     let diag2 = 0;
-
-//     for (let i = 0; i < x; i++) {
-//         for (let j = 0; j < x; j++) {
-//             if (i === j) {
-//                 diag1 += arr[i][j];
-//             }
-
-//             if (i + j === x - 1) {
-// 							diag2 += arr[i][j];
-//             }
-//         }
-//     }
-
-//     return Math.abs(diag1 - diag2);
-// }
+	const x = arr.length;
+	let diag1 = 0
+	let diag2 = 0
 
 
-// const diff = diagonalDifference([[11, 2, 4], [4, 5, 6], [10, 8, -12]]);
+	for (let i = 0; i < x; i++) {
+		for (let j = 0; j < x; j++) {
+			if (i === j) {
+				diag1 += arr[i][j];
+			}
+			if (i + j === x - 1) {
+				diag2 += arr[i][j]
+			}
+		} 
+	}
 
-// console.log(diff);
+	return Math.abs(diag2 - diag1)
+}
+
+
+const diff = diagonalDifference([[11, 2, 4], [4, 5, 6], [10, 8, -12]]);
+
+console.log(diff);
 
 /*Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal. */
 
