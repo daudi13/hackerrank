@@ -15,7 +15,6 @@ Returns
 */
 
 function solveMeFirst(a, b) {
-    console.log(a + b);
     return a + b;
 }
 
@@ -121,31 +120,31 @@ console.log(trial2)
 /*	Submissions	Leaderboard	Discussions	Editorial
 Given a square matrix, calculate the absolute difference between the sums of its diagonals.*/
 
-function diagonalDifference(arr) {
+// function diagonalDifference(arr) {
 
-    const x = arr.length;
-    let diag1 = 0;
-    let diag2 = 0;
+//     const x = arr.length;
+//     let diag1 = 0;
+//     let diag2 = 0;
 
-    for (let i = 0; i < x; i++) {
-        for (let j = 0; j < x; j++) {
-            if (i === j) {
-                diag1 += arr[i][j];
-            }
+//     for (let i = 0; i < x; i++) {
+//         for (let j = 0; j < x; j++) {
+//             if (i === j) {
+//                 diag1 += arr[i][j];
+//             }
 
-            if (i + j === x - 1) {
-                diag2+=arr[i][j]
-            }
-        }
-    }
+//             if (i + j === x - 1) {
+// 							diag2 += arr[i][j];
+//             }
+//         }
+//     }
 
-    return Math.abs(diag1 - diag2);
-}
+//     return Math.abs(diag1 - diag2);
+// }
 
 
-const diff = diagonalDifference([[11, 2, 4], [4, 5, 6], [10, 8, -12]]);
+// const diff = diagonalDifference([[11, 2, 4], [4, 5, 6], [10, 8, -12]]);
 
-console.log(diff);
+// console.log(diff);
 
 /*Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal. */
 
@@ -181,9 +180,7 @@ plusMinus(arr1);
 function staircase(n) {
 
     for (let i = 0; i < n; i++){
-
         const space = '#'.repeat(i + 1);
-
         console.log(space.padStart(n, ' '));
     }
 }
@@ -604,3 +601,5 @@ const angryProfessor = function (k, a) {
 console.log(angryProfessor(3, [-6, -5, -2, -1, 0, 1, 2]));
 
 //UNSOLVED*
+
+/* we define a magic square to be n x n matrix of distinct positive integers from 1 to n where the sum*/ 
