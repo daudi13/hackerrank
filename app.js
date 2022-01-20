@@ -602,4 +602,42 @@ console.log(angryProfessor(3, [-6, -5, -2, -1, 0, 1, 2]));
 
 //UNSOLVED*
 
-/* we define a magic square to be n x n matrix of distinct positive integers from 1 to n where the sum*/ 
+/* we define a magic square to be n x n matrix of distinct positive integers from 1 to n where the sum*/
+
+/*// Create a function which concatenates the number 7 to the end of every chord in an array. // Ignore all chords which already end with 7. // Examples // jazzify(["G", "F", "C"]) ➞ ["G7", "F7", "C7"] // jazzify(["Dm", "G7", "E", "A"]) ➞ ["Dm7", "G7", "E7", "A7"] // jazzify(["F", "E7", "A7", "Ab7", "Gm7", "C"]) ➞ ["F7", "E7", "A7", "Ab7", "Gm7", "C7"] // jazzify([]) ➞ [] // Notes: // Return an empty array if the given array is empty. // You can expect all the tests to have valid chords. */
+
+
+const addSeven = function (n) {
+	let newArr = [];
+
+	n.map( el => {
+		const splitted = el.split('');
+		if (splitted[splitted.length - 1] === '7') {
+			splitted;
+		} else {
+			splitted.push('7')
+		}
+		newArr.push(splitted.join(''))
+	})
+
+	return newArr;
+}
+
+console.log(addSeven(["at7", "b", "c", "d"]));
+
+//A teacher asks the class to open their books to a page number. A student can either start turning pages from the front of the book or from the back of the book. they always tuen pages one at a time. when they open the book, page 1 is always on the righ side when they flip page 1, they see page 2 and 3. Each page except the last page will always be printed on both sides. the last page may only be printed on the front, given the length of the book. if the book has n pages long, and a student wants to turn to page p. what is the minimum number of pages to turn? they can start at the beginning or the end of the book. Given n and p, find and print the minimum number of pages that must be turned in order to arrive at page p
+
+const pageCount = function (n, p) {
+	let arr = Array.from({ length: p }, (_, i) => i + 1);
+	const x = arr.length
+	arr.indexOf(n);
+	if (n - 1 > x - n) {
+		return x - n;
+	} else {
+		return n - 1
+	}
+}
+
+pageCount(3, 10);
+
+console.log(pageCount(2, 10))
