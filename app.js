@@ -641,3 +641,46 @@ const pageCount = function (n, p) {
 pageCount(3, 10);
 
 console.log(pageCount(2, 10))
+
+//UNSOLVED
+
+// PALINDROME
+
+const palindrome = str => {
+	const lowercase = str.toLowerCase();
+
+	return str === lowercase.split('').reverse().join('')
+} 
+
+console.log(palindrome('mama'));
+
+
+// FIZZBUZZ
+
+const fizzbuzz = numbre => {
+	const x = Array.from({ length: numbre }, (_, i) => i + 1);
+	return x.map(num => {
+		if (num % 3 === 0 && num % 5 === 0) {
+			console.log('fizzbuzz')
+		}
+		else if (num % 3 === 0) {
+			console.log('fizz')
+		} else if (num % 5 === 0) {
+			console.log('buzz')
+		} else {
+			console.log(num)
+		}
+	})
+}
+
+fizzbuzz(12);
+
+//ANAGRAM 
+
+const anagram = (str1, str2) => {
+	const x = str1.toLowerCase().split('').sort().join('');
+	const y = str2.toLowerCase().split('').sort().join('');
+	return x === y;
+} 
+
+console.log(anagram('tommy', 'moty'))
