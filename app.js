@@ -625,24 +625,6 @@ const addSeven = function (n) {
 
 console.log(addSeven(["at7", "b", "c", "d"]));
 
-//A teacher asks the class to open their books to a page number. A student can either start turning pages from the front of the book or from the back of the book. they always tuen pages one at a time. when they open the book, page 1 is always on the righ side when they flip page 1, they see page 2 and 3. Each page except the last page will always be printed on both sides. the last page may only be printed on the front, given the length of the book. if the book has n pages long, and a student wants to turn to page p. what is the minimum number of pages to turn? they can start at the beginning or the end of the book. Given n and p, find and print the minimum number of pages that must be turned in order to arrive at page p
-
-const pageCount = function (n, p) {
-	let arr = Array.from({ length: p }, (_, i) => i + 1);
-	const x = arr.length
-	arr.indexOf(n);
-	if (n - 1 > x - n) {
-		return x - n;
-	} else {
-		return n - 1
-	}
-}
-
-pageCount(3, 10);
-
-console.log(pageCount(2, 10))
-
-//UNSOLVED
 
 // PALINDROME
 
@@ -684,3 +666,43 @@ const anagram = (str1, str2) => {
 } 
 
 console.log(anagram('tommy', 'moty'))
+
+
+//A teacher asks the class to open their books to a page number. A student can either start turning pages from the front of the book or from the back of the book. they always turn pages one at a time. when they open the book, page 1 is always on the right side when they flip page 1, they see pages 2 and 3. Each page except the last page will always be printed on both sides. the last page may only be printed on the front, given the length of the book. if the book has n pages long, and a student wants to turn to page p. what is the minimum number of pages to turn? they can start at the beginning or the end of the book. Given n and p, find and print the minimum number of pages that must be turned in order to arrive at page p
+
+const pageCount = function (n, p) {
+
+	const frontFlip = Math.floor(n / 2);
+	let backflip;
+
+	if (n === p){
+		backflip = 1;
+	} else {
+		backflip = Math.round(p - n)/2
+	}
+
+	return Math.min(frontFlip, backflip)
+
+}
+
+console.log(pageCount(9, 10))
+
+//UNSOLVED
+
+/*Repeat a given string `str` (first argument) for `num` times (second argument). Return an empty string if `num` is not a positive number. For the purpose of this challenge, do *not* use the built-in `.repeat()` method.
+
+Submit a pull request to the main branch with your solution. Do not modify the tests. Once you have created a PR with passing tests, then you have successfully completed the exercise.*/
+
+const repeatStringOne = (str, num) => {
+	let a; 
+
+	if (num < 0) {
+		a = ''
+	} else {
+		a = Array(num + 1).join(str).toString();
+	}
+
+	return a;
+}
+
+console.log(repeatStringOne('a', -1));
