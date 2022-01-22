@@ -690,8 +690,7 @@ console.log(pageCount(9, 10))
 //UNSOLVED
 
 /*Repeat a given string `str` (first argument) for `num` times (second argument). Return an empty string if `num` is not a positive number. For the purpose of this challenge, do *not* use the built-in `.repeat()` method.
-
-Submit a pull request to the main branch with your solution. Do not modify the tests. Once you have created a PR with passing tests, then you have successfully completed the exercise.*/
+*/
 
 const repeatStringOne = (str, num) => {
 	let a; 
@@ -706,3 +705,30 @@ const repeatStringOne = (str, num) => {
 }
 
 console.log(repeatStringOne('a', -1));
+
+/*The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum of the two previous numbers. The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
+
+For example, `sumFibs(10)` should return `10` because all odd Fibonacci numbers less than or equal to `10` are 1, 1, 3, and 5.*/
+
+const sumAllOddFibs = num => {
+	let fibs = [1, 1];
+
+	for (let i = 2; i <= num; i++) {
+		let a = fibs[i - 2];
+		let b = fibs[i - 1];
+		let sum = a + b;
+		fibs.push(sum);
+	}
+
+	let res = 0;
+
+	fibs.forEach(fib => {
+		if (fib <= num && fib % 2 !== 0) {
+			res += fib
+		}
+	})
+
+	return res;
+}
+
+console.log(sumAllOddFibs(10))
