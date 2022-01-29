@@ -755,3 +755,5 @@ const viralAdverstising = n => {
 }
 
 console.log(viralAdverstising(5));
+
+// good job david
