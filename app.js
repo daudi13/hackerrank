@@ -756,3 +756,28 @@ const viralAdverstising = n => {
 
 console.log(viralAdverstising(5));
 
+/*an avid hiker keeps meticulous records of their hikes. During the last hike that took exactly steps steps, for every step it was noted if it was uphill, u, or downhill, D step. hikes always start and end at sea level, and each step up or down represents a 1 unit change in altitude. we define the follwing terms
+
+- a mountain is sequence of consequtivr steps above sea level, starting with a step up from sea level and ending with a step down sea level.
+
+-a valley is a sequence of consequtive steps above sea level, starting with a step down from sea level and  ending uo to sea level
+
+given the sequence of up and down steps during a hike, find and print the number of vallet walked through
+*/
+
+
+const countingValleys = (n, s) => {
+	let valleys = 0;
+	let elevations = 0;
+
+	for (let i = 0; i < n; i++) {
+		if (s[i] === 'D') {
+			elevations--;
+		} else {
+			if (elevations === -1) {
+				valleys++
+			}
+			elevations++
+		}
+	}
+}
