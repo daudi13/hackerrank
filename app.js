@@ -781,3 +781,37 @@ const countingValleys = (n, s) => {
 		}
 	}
 }
+
+/* A jail has a number of prisoners and a number of treats to pass out  to them. their jailer decides the fairset way to divide the treat is to seat the prisoners around a circlular table in sequentially numbered chairs. A chair number will be drawn from a hat. beginning with the prisoner in that chair, one candy will be handed to each prisoner sequentially around the table untill all have been distributed.
+
+the jailer is playing a little joke, though. The last piece of candy looks like all the others, but it tastes awful. determine the chair number occupied by the prisoner  who sill receive that candy*/
+
+function saveThePrisoner(n, m, s) {
+	
+	if (m % n > 0) {
+		return (m % n) + s - 1
+	} else {
+		return (m % n) + s + 1
+	}
+}
+
+console.log(saveThePrisoner(4, 19, 2));
+//not solved 
+
+/*There is a strange counter. At the firsr second, it displays the number 3. Each second, the number displayed by decrements by 1. in next second, the timer resets to 2 x the initial number for the prior cycle and continues counting down. the diagram below shows the counter value for each time t in the first three cycle*/
+
+function strangeTimer(t) {
+  let res = 3;
+  let memo = 3;
+  for (let i = 1; i <= t; i++) {
+    if (res > 1) {
+      res--;
+    } else if (res === 1) {
+      memo = memo * 2;
+      res = memo;
+    }
+  }
+  return res;
+} 
+
+console.log(`result of ${strangeTimer(10)}`)
