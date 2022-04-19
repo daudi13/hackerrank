@@ -815,3 +815,116 @@ function strangeTimer(t) {
 } 
 
 console.log(`result of ${strangeTimer(10)}`)
+
+/*recursion*/
+
+function countDown(n) {
+  for (let i = n; i > 0; i--) {
+    console.log(i)
+  }
+
+  console.log('Hooray')
+}
+
+countDown(5);
+
+function countDownRecursive(n) {
+  if (n <= 0) {
+    console.log("Hooray")
+  } else {
+    console.log(n)
+    countDownRecursive(n -1)
+  }
+}
+
+
+countDownRecursive(5);
+
+function sumRange(n) {
+  let total = 0
+  if (n <= 0) {
+    return total
+  } else {
+    total = n + sumRange(n - 1)
+  }
+  return total
+}
+
+console.log(sumRange(10))
+
+
+function sum(n) {
+  let total = 0
+  for (let i = n; i > 0; i--) {
+    total+=i
+  } 
+
+  return total
+}
+console.log(sum(10))
+
+// recursion in solving a tree
+
+const tree = {
+  name: "Daudi",
+  children: [
+    {
+      name: 'Jim',
+      children: []
+    },
+    {
+      name: "Mary",
+      children: [{
+        name: 'Henry',
+        children: [{
+          name: "mark",
+          children: [
+            { name: "Kyla", children: [] },
+            { name: "Malala", children: [] }
+          ]
+        }]
+      }]
+    }
+  ]
+}
+
+// function printChildren(t) {
+//   if (t.children.length === 0) {
+//     return
+//   } else if (t.children.length > 0) {
+//     t.children.forEach(child => {
+//       arr.push(child.name)
+//       printChildren(child)
+//     })
+//   }
+// }
+
+// console.log(printChildren(tree))
+
+/* find the number of ways that a given integer, X, can be expressed as the sum of the nth powers of unique, natural numbers. For example if X = 13 and N = 2, we have to find all combinations of unique squares adding up to 13. the only solution is 2(power 2) + 3(power 3)*/
+
+
+function powerSum(X, N) {
+  
+}
+
+/* in this kata, you are asked to square every digit of a number and concatenate them. for example, if we run 9119 through the function, 811181 will come out, because 9 squared is 81 and 1squared is 1. note the function accepts an integer and returns an integer
+
+*/
+
+const squareDigits = (num) => Number(num.toString().split("").map(elm => elm * elm).join(""));
+
+
+console.log(squareDigits(33));
+
+/* Given an array of integers, find the one that appears an odd number of times. there will always be only one integer that appears an odd number of times 
+*/
+
+function findOdd(arr) {
+  const freq = {};
+  for (const num of arr) {
+    freq[num] = (freq[num] || 0) + 1
+  }
+
+  return +Object.keys(freq).find(num => freq[num] % 2 === 1);
+} 
