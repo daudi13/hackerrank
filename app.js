@@ -982,3 +982,36 @@ console.log('mom is a bad ass cook'.toJadenCase())
 // write a function that takes an integer as input, nad returns the number of bits that are equal to one in the bunary representation of that number. you can guarantee that input id non-negative
 
 const countBits = (n)  => n.toString(2).split("0").join('').length
+
+// return the number (count) of vouwels in the given string. we will consider a, e, i, o, u as vowels for this kata
+
+const getCount = (str) => {
+  let vowelsCount = 0
+  const strArr = str.split("")
+
+  for (const element of strArr) {
+    switch (element) {
+      case 'a':
+        vowelsCount++
+        break
+      case 'e':
+        vowelsCount++
+        break
+      case 'i':
+        vowelsCount++
+        break
+      case 'o':
+        vowelsCount++
+        break
+      case 'u':
+        vowelsCount++
+        break
+      default:
+        vowelsCount
+    }
+  }
+
+  console.log(vowelsCount)
+} 
+
+getCount('neoi')
