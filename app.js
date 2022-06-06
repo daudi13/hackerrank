@@ -985,6 +985,9 @@ const countBits = (n)  => n.toString(2).split("0").join('').length
 
 // return the number (count) of vouwels in the given string. we will consider a, e, i, o, u as vowels for this kata
 
+// solution 1
+
+/*
 const getCount = (str) => {
   let vowelsCount = 0
   const strArr = str.split("")
@@ -1014,4 +1017,11 @@ const getCount = (str) => {
   console.log(vowelsCount)
 } 
 
-getCount('neoi')
+getCount('neoiiiiii')
+*/
+
+// solution 2 
+
+const getVowelCount = (str) => str.match(/[aeiou]/ig).length
+
+console.log(getVowelCount('man'))
