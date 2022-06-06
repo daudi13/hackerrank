@@ -928,3 +928,57 @@ function findOdd(arr) {
 
   return +Object.keys(freq).find(num => freq[num] % 2 === 1);
 } 
+
+/*A phrase is a palindrome if after converting all upercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backwards. Alphanumeric characters include letters and numbers 
+
+Given s return true if it is a palindrome or not
+*/
+
+const ispalindrome = function (s) {
+  //turn the string into a single string by removing the spaces
+  // revervising the string
+  // removing the non-alphanumeric values
+  // turning the string into lowercase
+  // checking if the string is similar to string before reverse
+
+  const oneString = s.split('').join('').replace(/\W/g, '').toLowerCase()
+
+  const reversed = s.split('').reverse().join('').replace(/\W/g, '').toLowerCase();
+
+  console.log(oneString)
+}
+
+ispalindrome('ab_a');
+
+/*A common way to deal with trolls attackong your comment section is to remove all of the vowels from the trolls comments, neutralizing the threats. Your task is to write a function that takes a string and returns a new string with all vowels removed for example the string "this website for losers LOL!" would become "ths wbst is for lsrs LL"*/
+
+const disemvowel = function (str) {
+  const splitString = str.replace(/A|E|I|O|U|a|e|i|o|u/g, '')
+
+  console.log(splitString);
+}
+
+disemvowel('this website for losers LOL!');
+
+
+/*Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.
+
+Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them. */
+
+String.prototype.toJadenCase = function () {
+  const res = this;
+  const arrRes = res.split(' ')
+
+  const newArr = arrRes.forEach((word, i) => {
+    return `${i}: ${word}`
+  })
+
+  return newArr;
+};
+
+console.log('mom is a bad ass cook'.toJadenCase())
+
+
+// write a function that takes an integer as input, nad returns the number of bits that are equal to one in the bunary representation of that number. you can guarantee that input id non-negative
+
+const countBits = (n)  => n.toString(2).split("0").join('').length
