@@ -1052,3 +1052,19 @@ const printerError = (s) => {
 }
 
 printerError('aaaxbbbbyyhwawiwjjjwwm')
+
+//This time no story, no theory. the examples below show you how to write function accum:
+
+const accum = s => {
+  const newStr = s.split("")
+  let newArr = []
+
+  for (let i = 0; i < newStr.length; i++) {
+    const letters = newStr[i].repeat(i + 1).toLowerCase()
+    newArr.push(letters[0].toUpperCase() + letters.slice(1))
+  }
+
+  console.log(newArr.join('-'))
+}
+
+accum('man')
