@@ -1041,3 +1041,18 @@ s="aaaxbbbbyyhwawiwjjjwwm"
 printer_error(s) => "8/22"
 */
 
+const printerError = (s) => {
+  const strArr = s.split("")
+  let errorSum = []
+  for (let i = 0; i < strArr.length; i++){
+    if (strArr[i].charCodeAt(0) > 109) {
+      errorSum.push(strArr[i])
+    } else {
+      errorSum
+    }
+  }
+
+  console.log(`${errorSum.length}/${strArr.length}`)
+}
+
+printerError('aaaxbbbbyyhwawiwjjjwwm')
