@@ -1043,16 +1043,12 @@ printer_error(s) => "8/22"
 
 const printerError = (s) => {
   const strArr = s.split("")
-  let errorSum = []
+  let errorSum = 0
   for (let i = 0; i < strArr.length; i++){
-    if (strArr[i].charCodeAt(0) > 109) {
-      errorSum.push(strArr[i])
-    } else {
-      errorSum
-    }
+    strArr[i] > 'm' ? errorSum++ : errorSum
   }
 
-  console.log(`${errorSum.length}/${strArr.length}`)
+  console.log(`${errorSum}/${strArr.length}`)
 }
 
 printerError('aaaxbbbbyyhwawiwjjjwwm')
