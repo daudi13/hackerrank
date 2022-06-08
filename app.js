@@ -1068,3 +1068,30 @@ const accum = s => {
 }
 
 accum('man')
+
+// Given a string s find the length of the longest subtsring without repeating characters
+// unsolved
+
+const lengthOfLongestSubString = function (s) {
+  
+}
+
+//pair of Gloves 
+/*Winter is coming, you must prepare your ski holidays. The objective of this kata is  to determine the number of pair of gloves you can constitue from the gloves you have in your drawwer Given an array describing the color of each glove, return the number of pairs you can consitute, assuming that only gloves of the same color can form pairs*/
+
+function numberOfPairs(gloves) {
+  const arrsingle = new Set(gloves)
+  const newArr = [...arrsingle]
+  let totalPairs = 0
+
+  for (const element of newArr) {
+    const filter = gloves.filter(word => word === element)
+    let pairs = Math.floor(filter.length / 2)
+    totalPairs += pairs
+  }
+
+  console.log(totalPairs)
+
+}
+
+numberOfPairs(["red", "green", "red", "blue", "blue"])
