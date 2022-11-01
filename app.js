@@ -1095,3 +1095,172 @@ function numberOfPairs(gloves) {
 }
 
 numberOfPairs(["red", "green", "red", "blue", "blue"])
+
+
+/* child is playing with a ball on the nth floor of a tall building. The height of this floor, h, is known.
+He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).
+His mother looks out of a window 1.5 meters from the ground.
+How many times will the mother see the ball pass in front of her window (including when it's falling and bouncing?
+Three conditions must be met for a valid experiment:
+Float parameter "h" in meters must be greater than 0
+Float parameter "bounce" must be greater than 0 and less than 1
+Float parameter "window" must be less than h.
+If all three conditions above are fulfilled, return a positive integer, otherwise return -1.*/
+
+
+function bouncingBall(h, bounce, window) {
+  let res = 0
+  const bouncing = h/bounce
+
+  if (h > 0 && bounce > 0 && bounce < 1 && window) {
+    if (bouncing > h ) {
+      
+    }
+  } else {
+    res = -1
+  }
+
+  return res
+}
+//unsolved
+console.log(bouncingBall(3, 0.66, 1.5))
+
+//Given an array of integers nums and an integer target, return indices of the two numbers such that they add uo to target, you may assume that each input would have exactly one solution and you may not use the same element twice. You can retun the answer in any order
+
+const twoSum = function (nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++){
+      if (nums[i] + nums[j] === target) {
+        return [i, j]
+      }
+    }
+  }
+}
+
+console.log(twoSum([3, 6, 4, 5], 9))
+
+
+//an integer is a palindrome when if reads the same backwards as forward 
+
+const palindromeNum = function (x) {
+  const numStr = x.toString().split('').reverse()
+
+  if (+numStr.join('') === x) {
+    return true
+  } else {
+    return false
+  }
+}  
+
+console.log(palindromeNum(111))
+console.log(palindromeNum(111))
+console.log(palindromeNum(112))
+
+/*
+Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+
+Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+
+I can be placed before V (5) and X (10) to make 4 and 9. 
+X can be placed before L (50) and C (100) to make 40 and 90. 
+C can be placed before D (500) and M (1000) to make 400 and 900.
+Given a roman numeral, convert it to an integer.
+
+ 
+
+Example 1:
+
+Input: s = "III"
+Output: 3
+Explanation: III = 3.
+Example 2:
+
+Input: s = "LVIII"
+Output: 58
+Explanation: L = 50, V= 5, III = 3.
+Example 3:
+
+Input: s = "MCMXCIV"
+Output: 1994
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+Constraints:
+
+1 <= s.length <= 15
+s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
+It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+*/
+
+
+const romanInt = function (s) {
+  const numMap = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 }
+  let res = 0
+  
+  s.split('').forEach((num, i) => {
+    if (numMap[num] < numMap[s[i + 1]]) res -= numMap[num]
+    else numMap += numMap[num]
+  }) 
+}
+
+
+/*
+You are given the heads of two sorted linked lists list1 and list2.
+Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+Return the head of the merged linked list.
+*/  
+
+
+const mergeTwoList = (list1, list2) 
+
+
+/*
+Two children, Lily and Ron, want to share a chocolate bar. Each of the squares has an integer on it.
+
+Lily decides to share a contiguous segment of the bar selected such that:
+
+The length of the segment matches Ron's birth month, and,
+The sum of the integers on the squares is equal to his birth day.
+Determine how many ways she can divide the chocolate.
+*/
+
+function birthday(s, d, m) {
+  // Write your code here
+  let arr = []
+    for(let i = 0; i < s.length; i++) {
+        for(let j = i + 1; j < s.length; j++) {
+            if(s[i] + s[j] === d) {
+              s[j]
+              s[i]
+            }
+        }
+    }
+}
+
+/*
+There will be two arrays of integers. Determine all integers that satisfy the following conditions
+1. The elements of the first array are all factors of the second array
+2. The elements of the second array are all factors of the first array
+
+These numbers are referred to as being between the two arrays. Determine how many such numbers exist
+*/
+
+
+/*
+Largest Smaller BST key
+
+Given a root of a Binary search Tree (BST) and a number num, implement an effiecient function findLargestSmallerKey that finds the largest key in the tree that is smaller than num. if such a number doesn't exist, return -1. Assume that all keys in the tree are non-negatives. Analyse the time and space complexities of your solution
+
+
+
+
+*/ 
