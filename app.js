@@ -1289,3 +1289,20 @@ function plusMinus(arr) {
 }
 
 plusMinus([1, 1, 0, -1, -1]);
+
+/*Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers*/
+
+function miniMaxSum(arr){
+  const arrAsc = [...arr].sort((a, b) => a - b);
+  const arrDsc = [...arr].sort((a, b) => b - a);
+  let sumMin = 0;
+  let sumMax = 0;
+  for (let i = 0; i <= 3; i++) {
+    sumMin+=arrAsc[i]
+    sumMax+=arrDsc[i]
+  }
+
+  console.log(sumMin, sumMax)
+}
+
+miniMaxSum([1,4,2,4,2])
