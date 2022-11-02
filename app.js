@@ -1263,4 +1263,29 @@ Given a root of a Binary search Tree (BST) and a number num, implement an effiec
 
 
 
-*/ 
+*/
+
+/*Given an array of integers, calculate the ratios of it's element that ate positive, negative and zero. Print the decimal values of each fraction on a new line with 6 places after the decimal.*/
+
+function plusMinus(arr) {
+  let sumNeg = 0;
+  let sumPos = 0;
+  let sumZero = 0;
+  for (const element of arr) {
+    if (element === 0) {
+      sumZero+=1
+    }
+    else if (element >= 1) {
+      sumPos+=1
+    }
+    else {
+      sumNeg+=1
+    }
+  }
+
+  console.log((sumPos / arr.length).toFixed(6));
+  console.log((sumNeg / arr.length).toFixed(6));
+  console.log((sumZero / arr.length).toFixed(6));
+}
+
+plusMinus([1, 1, 0, -1, -1]);
