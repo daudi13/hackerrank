@@ -1306,3 +1306,24 @@ function miniMaxSum(arr){
 }
 
 miniMaxSum([1,4,2,4,2])
+
+/*Given a time in 12-hour AM/PM formart, convert it to millitary(24 hours) time. complete the timeConversion  function in the editor below. it should return a new string representing the input tume in 24 hour format. timeConcersion has the following parameter(s);*/
+
+function timeConversion(s) {
+  const [hour, minutes, secModify] = s.split(':')
+  const modifyer = secModify.slice(2);
+  const sec = secModify.slice(0, 2)
+  let newHour;
+
+  if (modifyer === "PM" && hour < "12") {
+    newHour = Number(hour) + 12 
+  } else if (modifyer === "AM" && hour === "12") {
+    newHour = "00"
+  } else {
+    newHour = hour
+  }
+
+  return `${newHour}:${minutes}:${sec}`
+}
+
+console.log(timeConversion('02:01:00PM'))
