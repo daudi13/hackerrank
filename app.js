@@ -1327,3 +1327,22 @@ function timeConversion(s) {
 }
 
 console.log(timeConversion('02:01:00PM'))
+
+/*There is a collection of input strings and a collection of query strings. For each query, determine how many times it occurs in the list of inpit strings. return an array of the results */
+
+function matchingStrings(strings, queries) {
+  const instances = (arr, k) => {
+    let count = 0;
+    for (const element of arr) {
+      element === k && count++
+    }
+    return count;
+  }
+
+  let instanceArr = [];
+  for (let i = 0; i < queries.length; i++) {
+    instanceArr[i] = instances(strings, queries[i])
+  }
+
+  return instanceArr
+}
