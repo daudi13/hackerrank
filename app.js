@@ -1328,7 +1328,7 @@ function timeConversion(s) {
 
 console.log(timeConversion('02:01:00PM'))
 
-/*There is a collection of input strings and a collection of query strings. For each query, determine how many times it occurs in the list of inpit strings. return an array of the results */
+/*There is a collection of input strings and a collection of query strings. For each query, determine how many times it occurs in the list of input strings. return an array of the results */
 
 function matchingStrings(strings, queries) {
   const instances = (arr, k) => {
@@ -1345,4 +1345,14 @@ function matchingStrings(strings, queries) {
   }
 
   return instanceArr
+}
+
+/*given an array of integers, where all elements but one occurs twice find the unique element*/
+
+function lonelyInteger(a) {
+  let uniqueInteger = a.filter((val) => (
+    a.indexOf(val) === a.lastIndexOf(val)
+  ))
+
+  return uniqueInteger[0]
 }
