@@ -1356,3 +1356,27 @@ function lonelyInteger(a) {
 
   return uniqueInteger[0]
 }
+
+
+/*you will be given a list of 32 bit unsigned integer. Flip all the bits (1 -> 0 and 0 -> 1) and return the result as an unsigned integer*/
+
+
+function flippingBits(n) {
+  const binary = (n >>> 0).toString(2);
+  const bits = Math.clz32(binary);
+  const bitArr = binary.padStart(bits, '0').split('')
+  let newArr = [];
+
+  for (let i = 0; i < bitArr.length; i++) {
+    if (bitArr[i] === '1') {
+      bitArr[i] = '0'
+      newArr.push(bitArr[i])
+    } else {
+      bitArr[i] = '1'
+      newArr.push(bitArr[i])
+    }
+  }
+
+  return parseInt(newArr.join(''), 2)
+  
+}
