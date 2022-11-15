@@ -1380,3 +1380,21 @@ function flippingBits(n) {
   return parseInt(newArr.join(''), 2)
   
 }
+
+
+/*Given two integers, l and r, print all the odd bumbers between l and r (l and r inclusive)*/
+
+function oddNumbers(l, r) {
+  const arrLength = Math.abs(l - r);
+  let arr = [];
+  let oddArr;
+
+  for (let i = 0; i < arrLength; i++) {
+    arr[i] = l++;
+    arr.pop();
+    arr.push(r)
+    oddArr = arr.filter((x) => x % 2 === 1)
+  }
+
+  return oddArr
+}
