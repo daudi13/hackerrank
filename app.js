@@ -1398,3 +1398,14 @@ function oddNumbers(l, r) {
 
   return oddArr
 }
+
+/* Given a square matrix, calculate the absolute differences between the sum of its diagonals */
+
+function diagonalDifference(arr) {
+  const newArr = arr[0].length === 1 ? [...arr.slice(1)] : [...arr] 
+  let priSum = 0;
+  let secSum = 0;
+
+  for (let i = 0;)
+  
+}
